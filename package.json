@@ -1,0 +1,55 @@
+{
+  "name": "react-vite-bun-shadcn",
+  "author": {
+    "name": "Yuriy Babyak @yuriy.ward"
+  },
+  "private": false,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "bunx --bun vite",
+    "build": "tsc -b && bunx --bun vite build",
+    "lint": "biome lint --diagnostic-level=error && eslint .",
+    "lint:fix": "biome lint --write && eslint . --fix",
+    "format": "bunx biome format --write",
+    "preview": "bunx --bun vite preview",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "'*.{ts,tsx}'": ["eslint --fix ."],
+    "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
+      "biome check --write --no-errors-on-unmatched --files-ignore-unknown=true"
+    ]
+  },
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.1.1",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.474.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwind-merge": "^2.6.0",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@stylistic/eslint-plugin": "^2.13.0",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react-swc": "^3.7.2",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.19.0",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-sonarjs": "^3.0.1",
+    "globals": "^15.11.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
+    "postcss": "^8.5.1",
+    "prettier": "^3.4.2",
+    "tailwindcss": "^3.4.17",
+    "typescript": "~5.7.3",
+    "typescript-eslint": "^8.22.0",
+    "vite": "^6.0.11"
+  },
+  "trustedDependencies": ["@biomejs/biome"]
+}

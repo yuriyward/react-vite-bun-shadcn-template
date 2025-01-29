@@ -1,0 +1,98 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "vcs": { "enabled": false, "clientKind": "git", "useIgnoreFile": false },
+  "files": { "ignoreUnknown": false, "ignore": [] },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "attributePosition": "auto",
+    "bracketSpacing": true
+  },
+  "organizeImports": { "enabled": true },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "nursery": {
+        "useComponentExportOnlyModules": "warn",
+        "useAdjacentOverloadSignatures": "error",
+        "useCollapsedIf": "error",
+        "noCommonJs": "error",
+        "noSecrets": "error",
+        "useConsistentCurlyBraces": "error",
+        "useTrimStartEnd": "error",
+        "noSubstr": "error",
+        "useAtIndex": "error",
+        "noDocumentCookie": "error",
+        "useConsistentMemberAccessibility": "error",
+        // a11y rules
+        "useValidAutocomplete": "error",
+        "useAriaPropsSupportedByRole": "error",
+        "noStaticElementInteractions": "error",
+        // Stylelint inspired rules
+        "noMissingVarFunction": "error",
+        "noDuplicateCustomProperties": "error",
+        "noDuplicateProperties": "error",
+        "noDescendingSpecificity": "error",
+        "noUnknownPseudoElement": "error",
+        "noUnknownTypeSelector": "error"
+      },
+      "suspicious": {
+        "noEmptyBlockStatements": "error",
+        "noShorthandPropertyOverrides": "error",
+        "useNumberToFixedDigitsArgument": "error",
+        "useErrorMessage": "error",
+        "useAwait": "warn"
+      },
+      "style": {
+        "noInferrableTypes": "error",
+        "useConsistentArrayType": "error",
+        "useForOf": "error",
+        "useShorthandFunctionType": "error",
+        "useCollapsedElseIf": "error",
+        "useFragmentSyntax": "error",
+        "noImplicitBoolean": "error",
+        "useThrowNewError": "error",
+        "useExplicitLengthCheck": "error",
+        "useNamingConvention": "warn",
+        "useThrowOnlyError": "error"
+      },
+      "performance": {
+        "noBarrelFile": "error",
+        "noReExportAll": "error"
+      },
+      "correctness": {
+        "noUndeclaredDependencies": "error",
+        "noUnusedImports": "warn",
+        "noUnusedVariables": "warn",
+        // For web only
+        "noNodejsModules": "warn",
+        "useHookAtTopLevel": "error"
+      },
+      "complexity": {
+        "noExcessiveCognitiveComplexity": "error",
+        "useDateNow": "error"
+      }
+    },
+    "ignore": ["dist"]
+  },
+  "javascript": { "formatter": { "quoteStyle": "single" } },
+  "json": {
+    "parser": {
+      "allowComments": true
+    }
+  },
+  "overrides": [
+    {
+      "include": ["typings/*.d.ts"],
+      "linter": {
+        "rules": {
+          "style": {
+            "useNamingConvention": "off"
+          }
+        }
+      }
+    }
+  ]
+}
